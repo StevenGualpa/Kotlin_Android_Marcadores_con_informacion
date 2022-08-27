@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener, OnMap
     var REQUEST_CODE_LOCATION = 0
     var puntos: ArrayList<LatLng> = ArrayList()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -61,21 +60,27 @@ class MainActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener, OnMap
                 var n=str.length()
                 //Variables auxiliares  que usaremos
 
-                MensajeLargo(n.toString())
+                //MensajeLargo(n.toString())
                 while (index<n) {
                     var elemento: JSONObject = str.getJSONObject(index)
 
-                   // val coordenadas = LatLng(elemento.getDouble("Latitude"), elemento.getDouble("Longitude"))
-                    //val marcador: MarkerOptions = MarkerOptions().position(coordenadas).title(elemento.getString("Titulo"))
-                    //marcador
-                    //map.addMarker(marcador)
-
+                    var parametros: String=""
+                    parametros=elemento.getString("Descripcion")+"?"+
+                            elemento.getString("UrlImage")+"?"+
+                            elemento.getString("Facultad")+"?"+
+                            elemento.getString("Decano")+"?"+
+                            elemento.getString("Ubicacion")
                     val melbourneLatLng = LatLng(elemento.getDouble("Latitude"), elemento.getDouble("Longitude"))
                     val melbourne = map.addMarker(
                         MarkerOptions()
                             .position(melbourneLatLng)
-                            .title(elemento.getString("Titulo"))
+                            .title(elemento.getString("Titulo")).snippet(parametros)
+
+
                     )
+
+
+
                     melbourne?.showInfoWindow()
                     index++
 
@@ -88,11 +93,14 @@ class MainActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener, OnMap
 
     //Funcion Para Agregar Marcador
     private fun CreaMarcador() {
+     /*
         val coordenadas = LatLng(-1.0803351324691082, -79.50145350501472)
         val marcador: MarkerOptions = MarkerOptions().position(coordenadas).title("UTEQ")
+        marcador.snippet("")
         map.addMarker(marcador)
         //Animacion para Dirigir la camara hacia el marcador
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(coordenadas, 18f), 100, null)
+      */
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(LatLng(-1.0803351324691082, -79.50145350501472), 18f), 100, null)
         DescargarMarcadores()
     }
 
@@ -116,11 +124,12 @@ class MainActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener, OnMap
         map.setOnMarkerClickListener(this)
 
         enableLocation()
+        map.setInfoWindowAdapter(InfoWindowAdapter(this))
     }
 
     override fun onMyLocationButtonClick(): Boolean {
         MensajeLargo("Boton Pulsado")
-        return true   //False A mi Ubicacion true no hace nada
+        return false   //False A mi Ubicacion true no hace nada
     }
 
     override fun onMyLocationClick(p0: Location) {
@@ -128,8 +137,10 @@ class MainActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener, OnMap
     }
 
     override fun onMapClick(p0: LatLng) {
+      /*
         val coordenadas = LatLng(p0.latitude,p0.longitude)
         val marcador: MarkerOptions = MarkerOptions().position(coordenadas).title(puntos.size.toString())
+        marcador.snippet("")
         map.addMarker(marcador)
         //Animacion para Dirigir la camara hacia el marcador
         // map.animateCamera(CameraUpdateFactory.newLatLngZoom(coordenadas, 18f), 5000, null)
@@ -142,6 +153,8 @@ class MainActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener, OnMap
             map.addPolyline(lineas)
             puntos.clear()
         }
+
+       */
         MensajeLargo("Estas en ${p0.latitude},${p0.longitude}")
 
     }

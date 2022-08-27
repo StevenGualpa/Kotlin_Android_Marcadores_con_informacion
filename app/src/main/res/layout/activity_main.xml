@@ -21,45 +21,44 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNORMAL"
-        android:layout_width="87dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="680dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="690dp"
         android:onClick="ChangeNORMAL"
-        android:text="Mapa"
+        android:text="M"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/fragmentMap" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSATELLITE"
-        android:layout_width="116dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="680dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="690dp"
         android:onClick="ChangeSATELLITE"
-        android:text="SATELLITE"
+        android:text="S"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/fragmentMap" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnHYBRID"
-        android:layout_width="102dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="632dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="690dp"
         android:onClick="ChangeHYBRID"
-        android:text="HYBRID"
+        android:text="H"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/fragmentMap" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnTERRAIN"
-        android:layout_width="102dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginBottom="632dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginBottom="690dp"
         android:onClick="ChangeTERRAIN"
-        android:text="TERRAIN"
+        android:text="T"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/fragmentMap" />
 
