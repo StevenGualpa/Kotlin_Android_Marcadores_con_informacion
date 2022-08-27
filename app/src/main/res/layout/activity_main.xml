@@ -6,13 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <fragment
+        android:id="@+id/fragmentMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".MainActivity"></fragment>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNORMAL"
+        android:layout_width="87dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="680dp"
+        android:onClick="ChangeNORMAL"
+        android:text="Mapa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fragmentMap" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSATELLITE"
+        android:layout_width="116dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="680dp"
+        android:onClick="ChangeSATELLITE"
+        android:text="SATELLITE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fragmentMap" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHYBRID"
+        android:layout_width="102dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="632dp"
+        android:onClick="ChangeHYBRID"
+        android:text="HYBRID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fragmentMap" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTERRAIN"
+        android:layout_width="102dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="632dp"
+        android:onClick="ChangeTERRAIN"
+        android:text="TERRAIN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/fragmentMap" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
